@@ -1,0 +1,235 @@
+/* ============================================================
+   layout.css —— 《新媒体交互设计》第 3 次作业 全站统一样式表
+   作者：白名睿（2025106140） 西北大学新闻传播学院
+   说明：本站采用"纸感浅色 + 墨黑 + 印章红"的视觉方案，
+        所有颜色、字号统一走 CSS 变量，便于全站维护。
+   ============================================================ */
+
+/* ---------- 1. 全局变量与基础重置 ---------- */
+:root {
+  --paper:   #f7f3ea;   /* 纸感底色 */
+  --ink:     #1c1a17;   /* 墨黑正文色 */
+  --ink-mid: #5c574d;   /* 次级文字 */
+  --seal:    #c8102e;   /* 印章红（点缀/强调色） */
+  --line:    #d8d2c4;   /* 分隔线 */
+  --card:    #fffdf7;   /* 卡片底色 */
+  --serif:   "Noto Serif SC", "Songti SC", SimSun, serif;       /* 衬线：标题 */
+  --sans:    "PingFang SC", "Microsoft YaHei", sans-serif;      /* 无衬线：正文 */
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--sans);
+  background: var(--paper);
+  color: var(--ink);
+  line-height: 1.8;
+  font-size: 16px;
+}
+
+/* 纸张纹理：用两层径向渐变模拟轻微杂色，避免大面积纯色的呆板 */
+body::before {
+  content: "";
+  position: fixed; inset: 0; z-index: -1;
+  background:
+    radial-gradient(ellipse 600px 400px at 85% 8%,  rgba(200,16,46,.05), transparent 60%),
+    radial-gradient(ellipse 500px 380px at 8% 92%,  rgba(28,26,23,.05),  transparent 60%);
+}
+
+a { color: var(--seal); text-decoration: none; transition: opacity .25s; }
+a:hover { opacity: .75; }
+
+img { max-width: 100%; display: block; }
+
+/* ---------- 2. 顶部导航 header / nav ---------- */
+.site-header {
+  position: sticky; top: 0; z-index: 100;
+  background: rgba(247, 243, 234, .92);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--line);
+}
+
+.site-header .bar {
+  max-width: 1080px; margin: 0 auto; padding: 14px 24px;
+  display: flex; align-items: center; justify-content: space-between;
+}
+
+/* 站点标识：方形印章样式 */
+.site-header .logo {
+  display: flex; align-items: center; gap: 12px;
+  font-family: var(--serif); font-weight: 700; letter-spacing: .12em;
+}
+.site-header .logo .seal {
+  width: 38px; height: 38px; background: var(--seal); color: #fff;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 18px; border-radius: 8px;
+}
+
+/* 导航列表：当前页高亮（由 main.js 加 .active） */
+.site-nav { display: flex; gap: 6px; }
+.site-nav a {
+  color: var(--ink-mid); font-size: 15px; letter-spacing: .1em;
+  padding: 8px 16px; border-radius: 8px;
+}
+.site-nav a:hover { color: var(--ink); background: rgba(28,26,23,.05); opacity: 1; }
+.site-nav a.active {
+  color: #fff; background: var(--ink); opacity: 1;
+}
+
+/* ---------- 3. 首页 hero 区 ---------- */
+.hero {
+  max-width: 1080px; margin: 0 auto; padding: 72px 24px 56px;
+  display: grid; grid-template-columns: 1fr 340px; gap: 48px; align-items: center;
+}
+
+.hero .kicker {
+  color: var(--seal); letter-spacing: .45em; font-size: 13px;
+  font-weight: 700; margin-bottom: 18px;
+}
+
+.hero h1 {
+  font-family: var(--serif); font-size: clamp(34px, 4.4vw, 52px);
+  line-height: 1.3; letter-spacing: .05em; margin-bottom: 20px;
+}
+
+.hero h1 .light { color: var(--seal); }
+
+.hero .intro { color: var(--ink-mid); font-size: 17px; max-width: 520px; margin-bottom: 32px; }
+
+/* 首页按钮组 */
+.hero .actions { display: flex; gap: 14px; flex-wrap: wrap; }
+.btn {
+  display: inline-block; padding: 12px 28px; border-radius: 999px;
+  font-size: 15px; letter-spacing: .12em; border: 1.5px solid var(--ink);
+  color: var(--ink);
+}
+.btn.solid { background: var(--ink); color: var(--paper); }
+.btn.solid:hover { background: var(--seal); border-color: var(--seal); color: #fff; opacity: 1; }
+.btn:hover { border-color: var(--seal); color: var(--seal); opacity: 1; }
+
+/* 首页右侧 3D 角色立牌图（AI 生成概念图） */
+.hero .portrait {
+  position: relative; border-radius: 20px; overflow: hidden;
+  background: linear-gradient(160deg, #26221c, #17141a);
+  box-shadow: 0 30px 60px rgba(28, 26, 23, .25);
+}
+.hero .portrait img { width: 100%; height: 420px; object-fit: contain; object-position: center bottom; }
+.hero .portrait .badge {
+  position: absolute; left: 14px; top: 14px; background: var(--seal); color: #fff;
+  font-size: 12px; letter-spacing: .2em; padding: 6px 12px; border-radius: 6px;
+}
+
+/* ---------- 4. 通用段落容器与标题 ---------- */
+.section { max-width: 1080px; margin: 0 auto; padding: 56px 24px; }
+
+.section-head { display: flex; align-items: baseline; gap: 18px; margin-bottom: 34px; }
+.section-head h2 {
+  font-family: var(--serif); font-size: 32px; letter-spacing: .1em;
+}
+.section-head .no { font-family: Georgia, serif; color: var(--seal); font-size: 20px; }
+.section-head .rule { flex: 1; height: 1px; background: var(--line); }
+
+/* ---------- 5. 卡片网格（首页动态 / 荣誉 / 作品） ---------- */
+.cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 22px; }
+
+.card {
+  background: var(--card); border: 1px solid var(--line); border-radius: 16px;
+  padding: 26px 24px; transition: transform .3s, box-shadow .3s;
+}
+.card:hover { transform: translateY(-5px); box-shadow: 0 18px 40px rgba(28,26,23,.12); }
+.card h3 { font-family: var(--serif); font-size: 20px; margin-bottom: 10px; letter-spacing: .05em; }
+.card p  { color: var(--ink-mid); font-size: 15px; }
+.card .meta { display: inline-block; margin-top: 14px; color: var(--seal); font-size: 13px; letter-spacing: .15em; }
+
+/* ---------- 6. 简历页：时间线（经历） ---------- */
+.timeline { position: relative; margin-left: 10px; padding-left: 26px; border-left: 2px solid var(--line); }
+.timeline .item { position: relative; padding-bottom: 30px; }
+.timeline .item::before {
+  content: ""; position: absolute; left: -34px; top: 8px;
+  width: 12px; height: 12px; border-radius: 50%;
+  background: var(--paper); border: 3px solid var(--seal);
+}
+.timeline .when { color: var(--seal); font-size: 14px; letter-spacing: .15em; }
+.timeline h3 { font-family: var(--serif); font-size: 20px; margin: 4px 0 6px; }
+.timeline p  { color: var(--ink-mid); font-size: 15px; max-width: 640px; }
+
+/* ---------- 7. 简历页：技能条 ---------- */
+.skills { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px 36px; }
+.skill .name { display: flex; justify-content: space-between; font-size: 15px; margin-bottom: 8px; }
+.skill .bar { height: 8px; background: #e9e3d5; border-radius: 999px; overflow: hidden; }
+.skill .bar i {
+  display: block; height: 100%; width: var(--pct); border-radius: 999px;
+  background: linear-gradient(90deg, var(--ink), var(--seal));
+}
+
+/* ---------- 8. 荣誉奖项列表（index01 与 index0101 共用） ---------- */
+.honors { display: grid; gap: 14px; }
+.honor {
+  display: flex; align-items: center; gap: 18px;
+  background: var(--card); border: 1px solid var(--line); border-radius: 14px;
+  padding: 18px 22px;
+}
+.honor .medal {
+  flex: none; width: 46px; height: 46px; border-radius: 12px;
+  background: var(--seal); color: #fff; font-size: 22px;
+  display: flex; align-items: center; justify-content: center;
+}
+.honor .body { flex: 1; }
+.honor h3 { font-size: 17px; letter-spacing: .04em; }
+.honor p  { color: var(--ink-mid); font-size: 14px; }
+.honor .level {
+  flex: none; font-size: 12px; letter-spacing: .15em; color: var(--seal);
+  border: 1px solid var(--seal); border-radius: 999px; padding: 4px 12px;
+}
+
+/* ---------- 9. 详情页（index0101）正文排版 ---------- */
+.detail-hero { background: var(--ink); color: var(--paper); padding: 72px 24px; text-align: center; }
+.detail-hero .kicker { color: #e4b8c0; letter-spacing: .4em; font-size: 13px; margin-bottom: 14px; }
+.detail-hero h1 { font-family: var(--serif); font-size: clamp(32px, 5vw, 48px); letter-spacing: .1em; }
+
+.prose { max-width: 760px; margin: 0 auto; padding: 48px 24px; }
+.prose p { margin-bottom: 18px; color: var(--ink-mid); font-size: 16px; }
+.prose blockquote {
+  border-left: 4px solid var(--seal); background: var(--card);
+  padding: 16px 22px; margin: 24px 0; color: var(--ink);
+  font-family: var(--serif); font-size: 17px;
+}
+
+/* 详情页获奖记录表 */
+.record { width: 100%; border-collapse: collapse; margin-top: 10px; font-size: 15px; }
+.record th, .record td { border: 1px solid var(--line); padding: 12px 16px; text-align: left; }
+.record th { background: var(--card); font-family: var(--serif); letter-spacing: .08em; }
+.record td { color: var(--ink-mid); }
+
+/* ---------- 10. 页脚 footer ---------- */
+.site-footer { border-top: 1px solid var(--line); margin-top: 40px; }
+.site-footer .inner {
+  max-width: 1080px; margin: 0 auto; padding: 30px 24px;
+  display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap;
+  color: var(--ink-mid); font-size: 14px;
+}
+.site-footer a { color: var(--ink); border-bottom: 1px solid var(--seal); }
+
+/* ---------- 11. 返回顶部按钮（main.js 控制） ---------- */
+#backTop {
+  position: fixed; right: 26px; bottom: 26px; z-index: 99;
+  width: 46px; height: 46px; border-radius: 50%; border: none; cursor: pointer;
+  background: var(--ink); color: var(--paper); font-size: 18px;
+  opacity: 0; pointer-events: none; transition: opacity .3s, transform .3s;
+}
+#backTop.show { opacity: 1; pointer-events: auto; }
+#backTop:hover { transform: translateY(-4px); background: var(--seal); }
+
+/* ---------- 12. 滚动进场动画（main.js 控制 .reveal） ---------- */
+.reveal { opacity: 0; transform: translateY(26px); transition: opacity .7s, transform .7s; }
+.reveal.in { opacity: 1; transform: none; }
+
+/* ---------- 13. 响应式适配 ---------- */
+@media (max-width: 860px) {
+  .hero { grid-template-columns: 1fr; padding-top: 44px; }
+  .hero .portrait img { height: 320px; }
+  .site-header .bar { flex-direction: column; gap: 10px; }
+  .site-nav { flex-wrap: wrap; justify-content: center; }
+}

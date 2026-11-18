@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<!-- ============================================================
+     index01.html —— 一级页面：个人简历
+     结构：header → main（基本信息 / 教育与经历时间线 / 技能 / 荣誉）→ footer
+     ============================================================ -->
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>简历 · 白名睿</title>
+  <link rel="stylesheet" href="styles/layout.css">
+</head>
+<body>
+
+  <!-- 顶部导航 -->
+  <header class="site-header">
+    <div class="bar">
+      <div class="logo"><span class="seal">白</span><span>白名睿 · BAI MINGRUI</span></div>
+      <nav class="site-nav" aria-label="站内导航">
+        <a href="index.html">首页</a>
+        <a href="index01.html">简历</a>
+        <a href="index02.html">作品</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- 教育与经历：时间线 -->
+    <section class="section">
+      <div class="section-head">
+        <span class="no">01</span>
+        <h2>教育与经历</h2>
+        <span class="rule"></span>
+      </div>
+      <div class="timeline">
+        <div class="item reveal">
+          <p class="when">2025.09 — 至今</p>
+          <h3>西北大学 · 新闻传播学院</h3>
+          <p>本科在读（学号 2025106140）。主修新闻传播类课程，课余投入校园媒体实践与新媒体创作。</p>
+        </div>
+        <div class="item reveal">
+          <p class="when">2025.10 — 至今</p>
+          <h3>院团委组织部 · 干事</h3>
+          <p>参与学院共青团组织工作，负责活动会务、材料整理与评奖评优协助，累计服务满一年。</p>
+        </div>
+        <div class="item reveal">
+          <p class="when">2026 暑期</p>
+          <h3>「三下乡」社会实践</h3>
+          <p>随队开展暑期社会实践，参与调研记录与宣传推送，把新闻专业的笔头带进乡土现场。</p>
+        </div>
+        <div class="item reveal">
+          <p class="when">2026.11</p>
+          <h3>推普周 · 志愿服务</h3>
+          <p>参与推广普通话宣传周志愿活动，负责现场引导与活动记录。</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 技能 -->
+    <section class="section">
+      <div class="section-head">
+        <span class="no">02</span>
+        <h2>技能</h2>
+        <span class="rule"></span>
+      </div>
+      <div class="skills">
+        <div class="skill reveal">
+          <div class="name"><span>视频剪辑（剪映 / AI 工具链）</span><span>85%</span></div>
+          <div class="bar"><i style="--pct:85%"></i></div>
+        </div>
+        <div class="skill reveal">
+          <div class="name"><span>演示与视觉设计（PPT）</span><span>80%</span></div>
+          <div class="bar"><i style="--pct:80%"></i></div>
+        </div>
+        <div class="skill reveal">
+          <div class="name"><span>新闻写作与文案</span><span>82%</span></div>
+          <div class="bar"><i style="--pct:82%"></i></div>
+        </div>
+        <div class="skill reveal">
+          <div class="name"><span>摄影</span><span>70%</span></div>
+          <div class="bar"><i style="--pct:70%"></i></div>
+        </div>
+        <div class="skill reveal">
+          <div class="name"><span>HTML / CSS（在进阶中）</span><span>60%</span></div>
+          <div class="bar"><i style="--pct:60%"></i></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 荣誉奖项：点击进入二级页查看详情 -->
+    <section class="section">
+      <div class="section-head">
+        <span class="no">03</span>
+        <h2>荣誉奖项</h2>
+        <span class="rule"></span>
+      </div>
+      <div class="honors">
+        <article class="honor reveal">
+          <div class="medal">🎙️</div>
+          <div class="body">
+            <h3>丝路朗诵大赛 · 省级二等奖</h3>
+            <p>以声音走丝路，用朗诵连接历史与当下。</p>
+          </div>
+          <span class="level">省级</span>
+        </article>
+        <article class="honor reveal">
+          <div class="medal">📢</div>
+          <div class="body">
+            <h3>全国大学生广告艺术大赛 · 省级二等奖 ×2</h3>
+            <p>两组作品同时获奖，从策略到成片的完整广告训练。</p>
+          </div>
+          <span class="level">省级</span>
+        </article>
+        <article class="honor reveal">
+          <div class="medal">🏅</div>
+          <div class="body">
+            <h3>广播之声 · 金奖</h3>
+            <p>语言类展演金奖，声音表达的高光时刻。</p>
+          </div>
+          <span class="level">金奖</span>
+        </article>
+        <article class="honor reveal">
+          <div class="medal">📖</div>
+          <div class="body">
+            <h3>中华经典诵读 · 校级一等奖</h3>
+            <p>经典篇目诵读，校级一等奖。</p>
+          </div>
+          <span class="level">校级</span>
+        </article>
+      </div>
+      <p style="margin-top:20px">
+        <a class="btn" href="index0101.html">查看荣誉详情 →</a>
+      </p>
+    </section>
+  </main>
+
+  <!-- 页脚 -->
+  <footer class="site-footer">
+    <div class="inner">
+      <span>© 2026 白名睿 · 西北大学新闻传播学院</span>
+      <span><a href="index.html">返回首页</a></span>
+    </div>
+  </footer>
+
+  <script src="scripts/main.js"></script>
+</body>
+</html>
