@@ -109,16 +109,40 @@ img { max-width: 100%; display: block; }
 .btn.solid:hover { background: var(--seal); border-color: var(--seal); color: #fff; opacity: 1; }
 .btn:hover { border-color: var(--seal); color: var(--seal); opacity: 1; }
 
-/* 首页右侧 3D 角色立牌图（AI 生成概念图） */
-.hero .portrait {
+/* ---------- 首页右侧竖排名章卡片（纯 CSS 装饰） ---------- */
+.hero .namecard {
   position: relative; border-radius: 20px; overflow: hidden;
-  background: linear-gradient(160deg, #26221c, #17141a);
+  background: linear-gradient(165deg, #26221c, #17141a);
   box-shadow: 0 30px 60px rgba(28, 26, 23, .25);
+  min-height: 420px; display: flex; flex-direction: column;
+  align-items: center; justify-content: center; gap: 26px;
+  padding: 40px 28px; color: var(--paper);
 }
-.hero .portrait img { width: 100%; height: 420px; object-fit: contain; object-position: center bottom; }
-.hero .portrait .badge {
+/* 卡片内衬细线描边 */
+.hero .namecard::before {
+  content: ""; position: absolute; inset: 14px;
+  border: 1px solid rgba(244, 239, 230, .18); border-radius: 12px;
+  pointer-events: none;
+}
+.hero .namecard .badge {
   position: absolute; left: 14px; top: 14px; background: var(--seal); color: #fff;
   font-size: 12px; letter-spacing: .2em; padding: 6px 12px; border-radius: 6px;
+}
+/* 竖排姓名大字 */
+.hero .namecard .vname {
+  font-family: var(--serif); writing-mode: vertical-rl;
+  font-size: 62px; letter-spacing: .18em; line-height: 1;
+}
+/* 红底白字名章 */
+.hero .namecard .stamp {
+  writing-mode: vertical-rl; font-family: var(--serif);
+  background: var(--seal); color: #fff; font-size: 17px;
+  letter-spacing: .14em; padding: 10px 9px; border-radius: 4px;
+  box-shadow: 0 8px 18px rgba(163, 34, 52, .35);
+}
+.hero .namecard .card-sub {
+  font-size: 13px; letter-spacing: .14em; line-height: 2;
+  text-align: center; color: rgba(244, 239, 230, .55);
 }
 
 /* ---------- 4. 通用段落容器与标题 ---------- */
@@ -229,7 +253,7 @@ img { max-width: 100%; display: block; }
 /* ---------- 13. 响应式适配 ---------- */
 @media (max-width: 860px) {
   .hero { grid-template-columns: 1fr; padding-top: 44px; }
-  .hero .portrait img { height: 320px; }
+  .hero .namecard { min-height: 320px; }
   .site-header .bar { flex-direction: column; gap: 10px; }
   .site-nav { flex-wrap: wrap; justify-content: center; }
 }
