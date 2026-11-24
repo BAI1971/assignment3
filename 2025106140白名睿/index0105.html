@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<!-- ============================================================
+     index0105.html —— 《新媒体交互设计》第 3 次作业：传统方式个人博客
+     作者：白名睿（2025106140）西北大学新闻传播学院
+     结构：header 导航 → main 主体 → footer 页脚（语义化标签）
+     ============================================================ -->
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="从《喜鹊谋杀案》的美学里借了红落日、剪影和倒数彩蛋，做成 8 页横向幻灯片。这里记一下配色、转场和那些反复返工的排版细节。">
+  <meta name="author" content="白名睿">
+  <meta property="og:title" content="红黑白三色：一次悬疑演示的设计笔记">
+  <meta property="og:description" content="从《喜鹊谋杀案》的美学里借了红落日、剪影和倒数彩蛋，做成 8 页横向幻灯片。这里记一下配色、转场和那些反复返工的排版细节。">
+  <meta property="og:type" content="website">
+  <title>红黑白三色：一次悬疑演示的设计笔记 · 见字如面</title>
+  <link rel="stylesheet" href="styles/layout.css">
+  <link rel="icon" type="image/png" href="images/logo.png">
+  <link rel="alternate" type="application/rss+xml" title="见字如面 RSS" href="feed.xml">
+  <meta property="og:image" content="https://bai1971.github.io/assignment3/2025106140%E7%99%BD%E5%90%8D%E7%9D%BF/images/cover-05.jpg">
+</head>
+<body data-nav="home">
+<header class="site-header">
+  <div class="bar">
+    <a class="brand" href="index.html">
+      <span class="seal">白</span>
+      <span class="txt"><b>见字如面</b><small>BAI MINGRUI · JOURNAL</small></span>
+    </a>
+    <nav class="site-nav" aria-label="站内导航">
+      <a data-nav="home" href="index.html">首页</a>
+      <a data-nav="archive" href="index01.html">归档</a>
+      <a data-nav="tags" href="index01.html#tags">标签</a>
+      <a data-nav="about" href="index02.html">关于</a>
+    </nav>
+    <div class="header-tools">
+      <button class="icon-btn" id="themeToggle" type="button" aria-label="切换深色模式">&#9790;</button>
+    </div>
+  </div>
+</header>
+
+<div id="progress"></div>
+<main class="wrap">
+  <nav class="breadcrumb" aria-label="面包屑导航">
+    <a href="index.html">首页</a> / <a href="index01.html?cat=作品手记">作品手记</a> / 正文
+  </nav>
+  <article>
+    <header class="post-head">
+      <p class="kicker">NO. 05 · 作品手记</p>
+      <h1>红黑白三色：一次悬疑演示的设计笔记</h1>
+      <p class="deck">第 4 次作业交的是一份悬疑主题演示。整个页面只用三种颜色：红、黑、白。</p>
+      <div class="meta-line">
+        <span>2026 年 11 月 15 日</span><span>约 5 分钟</span><span>白名睿</span>
+      </div>
+    </header>
+    <figure class="cover-hero"><img src="images/cover-05.jpg" alt="红黑白三色：一次悬疑演示的设计笔记 封面图"></figure>
+    <div class="prose">
+
+        <p>第 4 次作业是做一份悬疑主题的演示。我给自己的限制是：全篇只用红、黑、白。颜色一少，气氛反而容易出来——剩下的就全靠构图、留白和节奏。</p>
+
+        <h2>三个视觉锚点</h2>
+        <p>第一个是<strong>红落日封面</strong>：一个巨大的红色圆形压在黑色地平线上，标题用白色衬线字压在圆里，不解释剧情，先把情绪立住。第二个是<strong>剪影</strong>：人物不出正脸，只用轮廓，观众自己会补完故事。第三个藏得深一点——页面角落有一排小士兵图标，每翻一页少一个，对应《无人生还》的倒数，算是给认真看的人留的彩蛋。</p>
+        <blockquote>「悬疑感不是把东西藏起来，是让观众意识到有东西被藏起来了。」</blockquote>
+
+        <h2>返工最多的其实是排版</h2>
+        <p>做的时候踩了不少坑：红球层级压过了标题、页脚和正文叠在一起、留声机与法官的剪影太暗看不清、放大镜装饰压住了字、长标题折行把版心撑破。每一处都是截了图才发现，再回头调间距、改字号、换对齐。</p>
+        <ul>
+          <li>标题折行：收窄字距、缩小字号，必要时手动断行；</li>
+          <li>元素太暗：不用纯黑，改成带一点点暖调的深灰，剪影才看得见；</li>
+          <li>装饰压字：给文字区单独留安全边距，装饰元素一律放到版心之外。</li>
+        </ul>
+
+        <h2>为什么同时交三种格式</h2>
+        <p>最后交付的是三件套：可交互的 HTML 页面、8 页图片的 PPTX（每页都写了演讲备注）、以及一份 PDF。HTML 用来呈现转场和悬停，PPTX 方便课堂放映，PDF 方便打印和存档。三份内容一致，只是各自照顾不同的场合。</p>
+        <p>做完最大的感受是：视觉风格越克制，越经得起放大看。红黑白这种限制，逼着我把每一处间距都调明白。</p>
+            </div>
+    <footer class="post-foot">
+      <div class="tags"><a class="tag" href="index.html?tag=视觉设计"># 视觉设计</a><a class="tag" href="index.html?tag=PPT"># PPT</a><a class="tag" href="index.html?tag=喜鹊谋杀案"># 喜鹊谋杀案</a><a class="tag" href="index.html?tag=作业4"># 作业4</a></div>
+      <a href="index.html">← 返回文章列表</a>
+    </footer>
+  </article>
+  <nav class="post-nav" aria-label="文章翻页">
+    <a href="index0106.html"><small>← 上一篇</small>用 Three.js 做一个会转的首页</a>
+    <a class="next" href="index0104.html"><small>下一篇 →</small>第一次让 AI 帮我做完一条视频</a>
+  </nav>
+</main>
+
+<footer class="site-footer">
+  <div class="inner">
+    <span>© 2026 白名睿 · 西北大学新闻传播学院 · 见字如面</span>
+    <span><a href="index01.html">文章归档</a> &nbsp;/&nbsp; <a href="feed.xml">RSS 订阅</a> &nbsp;/&nbsp; <a href="https://bai1971.github.io/assignment2/" target="_blank" rel="noopener">3D 版首页</a></span>
+  </div>
+</footer>
+<script src="scripts/main.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<!-- ============================================================
+     404.html —— 《新媒体交互设计》第 3 次作业：传统方式个人博客
+     作者：白名睿（2025106140）西北大学新闻传播学院
+     结构：header 导航 → main 主体 → footer 页脚（语义化标签）
+     ============================================================ -->
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="404 · 页面未找到">
+  <meta name="author" content="白名睿">
+  <meta property="og:title" content="页面不存在">
+  <meta property="og:description" content="404 · 页面未找到">
+  <meta property="og:type" content="website">
+  <title>页面不存在 · 见字如面</title>
+  <link rel="stylesheet" href="styles/layout.css">
+  <link rel="icon" type="image/png" href="images/logo.png">
+  <link rel="alternate" type="application/rss+xml" title="见字如面 RSS" href="feed.xml">
+  
+</head>
+<body data-nav="home">
+<header class="site-header">
+  <div class="bar">
+    <a class="brand" href="index.html">
+      <span class="seal">白</span>
+      <span class="txt"><b>见字如面</b><small>BAI MINGRUI · JOURNAL</small></span>
+    </a>
+    <nav class="site-nav" aria-label="站内导航">
+      <a data-nav="home" href="index.html">首页</a>
+      <a data-nav="archive" href="index01.html">归档</a>
+      <a data-nav="tags" href="index01.html#tags">标签</a>
+      <a data-nav="about" href="index02.html">关于</a>
+    </nav>
+    <div class="header-tools">
+      <button class="icon-btn" id="themeToggle" type="button" aria-label="切换深色模式">&#9790;</button>
+    </div>
+  </div>
+</header>
+
+<main class="wrap notfound">
+  <p class="no">404</p>
+  <h1>这一页还没写出来</h1>
+  <p>可能是链接过期了，也可能这篇还在草稿里。先回首页看看别的吧。</p>
+  <a class="btn solid" href="index.html">← 回到首页</a>
+</main>
+
+<footer class="site-footer">
+  <div class="inner">
+    <span>© 2026 白名睿 · 西北大学新闻传播学院 · 见字如面</span>
+    <span><a href="index01.html">文章归档</a> &nbsp;/&nbsp; <a href="feed.xml">RSS 订阅</a> &nbsp;/&nbsp; <a href="https://bai1971.github.io/assignment2/" target="_blank" rel="noopener">3D 版首页</a></span>
+  </div>
+</footer>
+<script src="scripts/main.js"></script>
+
+</body>
+</html>

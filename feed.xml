@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+<channel>
+  <title>见字如面 · 白名睿</title>
+  <link>https://bai1971.github.io/assignment3/2025106140%E7%99%BD%E5%90%8D%E7%9D%BF/</link>
+  <description>课程笔记、作品手记、校园现场与生活随笔。</description>
+  <language>zh-CN</language>
+  <lastBuildDate>2026-11-16</lastBuildDate>
+  <item>
+    <title>用 Three.js 做一个会转的首页</title>
+    <link>https://bai1971.github.io/assignment3/2025106140%E7%99%BD%E5%90%8D%E7%9D%BF/index0106.html</link>
+    <guid>https://bai1971.github.io/assignment3/2025106140%E7%99%BD%E5%90%8D%E7%9D%BF/index0106.html</guid>
+    <pubDate>2026-11-16</pubDate>
+    <category>课程笔记</category>
+    <description>没有模型、没有人物，只有六个漂浮的几何体、一圈发光轨道和随板块切换的四种颜色。记录一下这个 3D 首页是怎么搭起来的，以及我为什么最后决定不放人像。</description>
+  </item>
+  <item>
+    <title>红黑白三色：一次悬疑演示的设计笔记</title>
+    <link>https://bai1971.github.io/assignment3/2025106140%E7%99%BD%E5%90%8D%E7%9D%BF/index0105.html</link>
+    <guid>https://bai1971.github.io/assignment3/2025106140%E7%99%BD%E5%90%8D%E7%9D%BF/index0105.html</guid>
+    <pubDate>2026-11-15</pubDate>
+    <category>作品手记</category>
+    <description>从《喜鹊谋杀案》的美学里借了红落日、剪影和倒数彩蛋，做成 8 页横向幻灯片。这里记一下配色、转场和那些反复返工的排版细节。</description>
+  </item>
+  <item>
+    <title>第一次让 AI 帮我做完一条视频</title>
+    <link>https://bai1971.github.io/assignment3/2025106140%E7%99%BD%E5%90%8D%E7%9D%BF/index0104.html</link>
+    <guid>https://bai1971.github.io/assignment3/2025106140%E7%99%BD%E5%90%8D%E7%9D%BF/index0104.html</guid>
+    <pubDate>2026-11-12</pubDate>
+    <category>作品手记</category>
+    <description>装技能包、写「百万剪辑师」提示词、生成草稿、导出成片。中间遇到仓库失效、路径报错、导出分支没写完，逐个啃下来。</description>
+  </item>
+  <item>
+    <title>综合测评整理手记：把一年拆成几张表</title>
+    <link>https://bai1971.github.io/assignment3/2025106140%E7%99%BD%E5%90%8D%E7%9D%BF/index0103.html</link>
+    <guid>https://bai1971.github.io/assignment3/2025106140%E7%99%BD%E5%90%8D%E7%9D%BF/index0103.html</guid>
+    <pubDate>2026-11-08</pubDate>
+    <category>生活随笔</category>
+    <description>创新能力、社会责任、组织管理、个人特长、个性化-其他……每个模块怎么归、证明放哪、材料不齐怎么办，写点实操层面的经验。</description>
+  </item>
+  <item>
+    <title>把《共产党宣言》讲成三分钟</title>
+    <link>https://bai1971.github.io/assignment3/2025106140%E7%99%BD%E5%90%8D%E7%9D%BF/index0102.html</link>
+    <guid>https://bai1971.github.io/assignment3/2025106140%E7%99%BD%E5%90%8D%E7%9D%BF/index0102.html</guid>
+    <pubDate>2026-10-22</pubDate>
+    <category>课程笔记</category>
+    <description>老师要求「具体、口语化、易理解」。从书面长句到能直接念出来，中间反复压缩了好几轮，先课堂讲，再交纸质打印稿。</description>
+  </item>
+  <item>
+    <title>推普周那天，我在现场写了一篇校园新闻</title>
+    <link>https://bai1971.github.io/assignment3/2025106140%E7%99%BD%E5%90%8D%E7%9D%BF/index0101.html</link>
+    <guid>https://bai1971.github.io/assignment3/2025106140%E7%99%BD%E5%90%8D%E7%9D%BF/index0101.html</guid>
+    <pubDate>2026-09-14</pubDate>
+    <category>校园现场</category>
+    <description>从现场记录、采访到成稿，再到给总结报告排版、把 12 项附件对齐。记一次完整的新闻写作课后练笔。</description>
+  </item>
+</channel>
+</rss>

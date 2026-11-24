@@ -1,81 +1,94 @@
 <!DOCTYPE html>
 <!-- ============================================================
-     index0101.html —— 二级页面：荣誉详情（index01 的下一级）
-     命名遵循作业规范：一级 index01，二级 index0101
+     index0101.html —— 《新媒体交互设计》第 3 次作业：传统方式个人博客
+     作者：白名睿（2025106140）西北大学新闻传播学院
+     结构：header 导航 → main 主体 → footer 页脚（语义化标签）
      ============================================================ -->
 <html lang="zh-CN">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>荣誉详情 · 白名睿</title>
+  <meta name="description" content="从现场记录、采访到成稿，再到给总结报告排版、把 12 项附件对齐。记一次完整的新闻写作课后练笔。">
+  <meta name="author" content="白名睿">
+  <meta property="og:title" content="推普周那天，我在现场写了一篇校园新闻">
+  <meta property="og:description" content="从现场记录、采访到成稿，再到给总结报告排版、把 12 项附件对齐。记一次完整的新闻写作课后练笔。">
+  <meta property="og:type" content="website">
+  <title>推普周那天，我在现场写了一篇校园新闻 · 见字如面</title>
   <link rel="stylesheet" href="styles/layout.css">
-  <link rel="icon" type="image/png" href="images/logo.png"> <!-- 站点图标（名章 logo） -->
+  <link rel="icon" type="image/png" href="images/logo.png">
+  <link rel="alternate" type="application/rss+xml" title="见字如面 RSS" href="feed.xml">
+  <meta property="og:image" content="https://bai1971.github.io/assignment3/2025106140%E7%99%BD%E5%90%8D%E7%9D%BF/images/cover-01.jpg">
 </head>
-<body>
-
-  <!-- 顶部导航 -->
-  <header class="site-header">
-    <div class="bar">
-      <div class="logo"><span class="seal">白</span><span>白名睿 · BAI MINGRUI</span></div>
-      <nav class="site-nav" aria-label="站内导航">
-        <a href="index.html">首页</a>
-        <a href="index01.html">简历</a>
-        <a href="index02.html">作品</a>
-      </nav>
+<body data-nav="home">
+<header class="site-header">
+  <div class="bar">
+    <a class="brand" href="index.html">
+      <span class="seal">白</span>
+      <span class="txt"><b>见字如面</b><small>BAI MINGRUI · JOURNAL</small></span>
+    </a>
+    <nav class="site-nav" aria-label="站内导航">
+      <a data-nav="home" href="index.html">首页</a>
+      <a data-nav="archive" href="index01.html">归档</a>
+      <a data-nav="tags" href="index01.html#tags">标签</a>
+      <a data-nav="about" href="index02.html">关于</a>
+    </nav>
+    <div class="header-tools">
+      <button class="icon-btn" id="themeToggle" type="button" aria-label="切换深色模式">&#9790;</button>
     </div>
-  </header>
+  </div>
+</header>
 
-  <main>
-    <!-- 详情页头部横幅 -->
-    <section class="detail-hero">
-      <p class="kicker">HONORS IN DETAIL</p>
-      <h1>荣誉与奖项 · 详情</h1>
-    </section>
+<div id="progress"></div>
+<main class="wrap">
+  <nav class="breadcrumb" aria-label="面包屑导航">
+    <a href="index.html">首页</a> / <a href="index01.html?cat=校园现场">校园现场</a> / 正文
+  </nav>
+  <article>
+    <header class="post-head">
+      <p class="kicker">NO. 01 · 校园现场</p>
+      <h1>推普周那天，我在现场写了一篇校园新闻</h1>
+      <p class="deck">上午在活动现场做引导，下午把看到的东西写成一篇消息。这两件事之间的距离，比想象中短。</p>
+      <div class="meta-line">
+        <span>2026 年 9 月 14 日</span><span>约 5 分钟</span><span>白名睿</span>
+      </div>
+    </header>
+    <figure class="cover-hero"><img src="images/cover-01.jpg" alt="推普周那天，我在现场写了一篇校园新闻 封面图"></figure>
+    <div class="prose">
 
-    <!-- 正文：获奖经历自述 + 记录表 -->
-    <article class="prose">
-      <p>
-        奖项于我，不只是证书上的名字。每一次站上台，都是从「敢开口」到「讲得好」的一次升级；
-        每一次交出作品，都是把课堂里的方法论搬进真实命题的一次演练。
-      </p>
-      <blockquote>
-        「朗诵给我胆量，广告给我方法，志愿服务给我现场。」
-      </blockquote>
-      <p>
-        大广赛的两件省级二等奖作品，让我完整走了一遍「洞察—策略—创意—成片」的流程；
-        丝路朗诵与广播之声的舞台，则训练了我在镜头与话筒前的表达稳定性。
-        而三下乡、推普周这些志愿服务，提醒我：传播的落点永远在人身上。
-      </p>
+        <p>推普周那几天，我同时在做两件事：志愿服务的现场引导，和一门课的校园新闻写作练笔。后来发现，把它们当成一件事反而更顺——<strong>现场本身就是采访。</strong></p>
 
-      <!-- 获奖记录表 -->
-      <h2 style="font-family:var(--serif);letter-spacing:.1em;margin:34px 0 10px;">获奖记录</h2>
-      <table class="record">
-        <thead>
-          <tr><th>奖项</th><th>级别</th><th>年份</th></tr>
-        </thead>
-        <tbody>
-          <tr><td>丝路朗诵大赛</td><td>省级二等奖</td><td>2025 — 2026</td></tr>
-          <tr><td>全国大学生广告艺术大赛（两组作品）</td><td>省级二等奖 ×2</td><td>2026</td></tr>
-          <tr><td>广播之声展演</td><td>金奖</td><td>2026</td></tr>
-          <tr><td>中华经典诵读大赛</td><td>校级一等奖</td><td>2025 — 2026</td></tr>
-        </tbody>
-      </table>
+        <h2>先在现场把细节记下来</h2>
+        <p>那天负责引导和记录，手里一直攥着手机备忘录。我没急着写「活动圆满开展」，而是先记具体的东西：横幅挂在哪、咨询台前排了几个人、有同学拿着绕口令的卡片练了三遍、志愿者怎么给一位老师解释普通话水平测试的流程。</p>
+        <p>这些细节后来全用上了。消息写作课上老师反复强调，导语里不要先下结论，先让人看见现场。写的时候我才真正明白这句话的意思。</p>
+        <blockquote>「新闻不是给活动写评语，是把现场搬给没来的人看。」</blockquote>
 
-      <p style="margin-top:30px">
-        <a class="btn solid" href="index01.html">← 返回简历页</a>
-        <a class="btn" href="index02.html">去作品集 →</a>
-      </p>
-    </article>
-  </main>
+        <h2>从练笔到总结报告</h2>
+        <p>成稿在线提交之后，还有一份总结报告要交：正文加 12 项附件。这一部分花的功夫不比写稿少——标题层级、行距、页码、附件编号，以及每项材料对应的位置，都要能让人一眼找到。</p>
+        <ul>
+          <li>附件按正文提到的顺序编号，不另起一套；</li>
+          <li>图片统一宽度、统一说明格式，不忽大忽小；</li>
+          <li>终稿先导出一份通读，再回头调排版，避免只盯着屏幕看。</li>
+        </ul>
+        <p>做完整套流程最直观的感受是：写作和排版不是先后两道工序，它们一起决定读者能不能读下去。稿子写得再清楚，如果附件乱成一团，交付效果照样打折。</p>
+            </div>
+    <footer class="post-foot">
+      <div class="tags"><a class="tag" href="index.html?tag=推普周"># 推普周</a><a class="tag" href="index.html?tag=新闻写作"># 新闻写作</a><a class="tag" href="index.html?tag=志愿服务"># 志愿服务</a></div>
+      <a href="index.html">← 返回文章列表</a>
+    </footer>
+  </article>
+  <nav class="post-nav" aria-label="文章翻页">
+    <a href="index0102.html"><small>← 上一篇</small>把《共产党宣言》讲成三分钟</a>
+    <a class="next" href="index.html"><small>回到列表 →</small>全部文章</a>
+  </nav>
+</main>
 
-  <!-- 页脚 -->
-  <footer class="site-footer">
-    <div class="inner">
-      <span>© 2026 白名睿 · 西北大学新闻传播学院</span>
-      <span><a href="index.html">返回首页</a></span>
-    </div>
-  </footer>
+<footer class="site-footer">
+  <div class="inner">
+    <span>© 2026 白名睿 · 西北大学新闻传播学院 · 见字如面</span>
+    <span><a href="index01.html">文章归档</a> &nbsp;/&nbsp; <a href="feed.xml">RSS 订阅</a> &nbsp;/&nbsp; <a href="https://bai1971.github.io/assignment2/" target="_blank" rel="noopener">3D 版首页</a></span>
+  </div>
+</footer>
+<script src="scripts/main.js"></script>
 
-  <script src="scripts/main.js"></script>
 </body>
 </html>

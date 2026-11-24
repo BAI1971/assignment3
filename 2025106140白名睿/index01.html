@@ -1,148 +1,65 @@
 <!DOCTYPE html>
 <!-- ============================================================
-     index01.html —— 一级页面：个人简历
-     结构：header → main（基本信息 / 教育与经历时间线 / 技能 / 荣誉）→ footer
+     index01.html —— 《新媒体交互设计》第 3 次作业：传统方式个人博客
+     作者：白名睿（2025106140）西北大学新闻传播学院
+     结构：header 导航 → main 主体 → footer 页脚（语义化标签）
      ============================================================ -->
 <html lang="zh-CN">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>简历 · 白名睿</title>
+  <meta name="description" content="见字如面 · 全部文章归档与分类标签。">
+  <meta name="author" content="白名睿">
+  <meta property="og:title" content="归档">
+  <meta property="og:description" content="见字如面 · 全部文章归档与分类标签。">
+  <meta property="og:type" content="website">
+  <title>归档 · 见字如面</title>
   <link rel="stylesheet" href="styles/layout.css">
-  <link rel="icon" type="image/png" href="images/logo.png"> <!-- 站点图标（名章 logo） -->
+  <link rel="icon" type="image/png" href="images/logo.png">
+  <link rel="alternate" type="application/rss+xml" title="见字如面 RSS" href="feed.xml">
+  
 </head>
-<body>
-
-  <!-- 顶部导航 -->
-  <header class="site-header">
-    <div class="bar">
-      <div class="logo"><span class="seal">白</span><span>白名睿 · BAI MINGRUI</span></div>
-      <nav class="site-nav" aria-label="站内导航">
-        <a href="index.html">首页</a>
-        <a href="index01.html">简历</a>
-        <a href="index02.html">作品</a>
-      </nav>
+<body data-nav="archive">
+<header class="site-header">
+  <div class="bar">
+    <a class="brand" href="index.html">
+      <span class="seal">白</span>
+      <span class="txt"><b>见字如面</b><small>BAI MINGRUI · JOURNAL</small></span>
+    </a>
+    <nav class="site-nav" aria-label="站内导航">
+      <a data-nav="home" href="index.html">首页</a>
+      <a data-nav="archive" href="index01.html">归档</a>
+      <a data-nav="tags" href="index01.html#tags">标签</a>
+      <a data-nav="about" href="index02.html">关于</a>
+    </nav>
+    <div class="header-tools">
+      <button class="icon-btn" id="themeToggle" type="button" aria-label="切换深色模式">&#9790;</button>
     </div>
-  </header>
+  </div>
+</header>
 
-  <main>
-    <!-- 教育与经历：时间线 -->
-    <section class="section">
-      <div class="section-head">
-        <span class="no">01</span>
-        <h2>教育与经历</h2>
-        <span class="rule"></span>
-      </div>
-      <div class="timeline">
-        <div class="item reveal">
-          <p class="when">2025.09 — 至今</p>
-          <h3>西北大学 · 新闻传播学院</h3>
-          <p>本科在读（学号 2025106140）。主修新闻传播类课程，课余投入校园媒体实践与新媒体创作。</p>
-        </div>
-        <div class="item reveal">
-          <p class="when">2025.10 — 至今</p>
-          <h3>院团委组织部 · 干事</h3>
-          <p>参与学院共青团组织工作，负责活动会务、材料整理与评奖评优协助，累计服务满一年。</p>
-        </div>
-        <div class="item reveal">
-          <p class="when">2026 暑期</p>
-          <h3>「三下乡」社会实践</h3>
-          <p>随队开展暑期社会实践，参与调研记录与宣传推送，把新闻专业的笔头带进乡土现场。</p>
-        </div>
-        <div class="item reveal">
-          <p class="when">2026.11</p>
-          <h3>推普周 · 志愿服务</h3>
-          <p>参与推广普通话宣传周志愿活动，负责现场引导与活动记录。</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- 技能 -->
-    <section class="section">
-      <div class="section-head">
-        <span class="no">02</span>
-        <h2>技能</h2>
-        <span class="rule"></span>
-      </div>
-      <div class="skills">
-        <div class="skill reveal">
-          <div class="name"><span>视频剪辑（剪映 / AI 工具链）</span><span>85%</span></div>
-          <div class="bar"><i style="--pct:85%"></i></div>
-        </div>
-        <div class="skill reveal">
-          <div class="name"><span>演示与视觉设计（PPT）</span><span>80%</span></div>
-          <div class="bar"><i style="--pct:80%"></i></div>
-        </div>
-        <div class="skill reveal">
-          <div class="name"><span>新闻写作与文案</span><span>82%</span></div>
-          <div class="bar"><i style="--pct:82%"></i></div>
-        </div>
-        <div class="skill reveal">
-          <div class="name"><span>摄影</span><span>70%</span></div>
-          <div class="bar"><i style="--pct:70%"></i></div>
-        </div>
-        <div class="skill reveal">
-          <div class="name"><span>HTML / CSS（在进阶中）</span><span>60%</span></div>
-          <div class="bar"><i style="--pct:60%"></i></div>
-        </div>
-      </div>
-    </section>
-
-    <!-- 荣誉奖项：点击进入二级页查看详情 -->
-    <section class="section">
-      <div class="section-head">
-        <span class="no">03</span>
-        <h2>荣誉奖项</h2>
-        <span class="rule"></span>
-      </div>
-      <div class="honors">
-        <article class="honor reveal">
-          <div class="medal">🎙️</div>
-          <div class="body">
-            <h3>丝路朗诵大赛 · 省级二等奖</h3>
-            <p>以声音走丝路，用朗诵连接历史与当下。</p>
-          </div>
-          <span class="level">省级</span>
-        </article>
-        <article class="honor reveal">
-          <div class="medal">📢</div>
-          <div class="body">
-            <h3>全国大学生广告艺术大赛 · 省级二等奖 ×2</h3>
-            <p>两组作品同时获奖，从策略到成片的完整广告训练。</p>
-          </div>
-          <span class="level">省级</span>
-        </article>
-        <article class="honor reveal">
-          <div class="medal">🏅</div>
-          <div class="body">
-            <h3>广播之声 · 金奖</h3>
-            <p>语言类展演金奖，声音表达的高光时刻。</p>
-          </div>
-          <span class="level">金奖</span>
-        </article>
-        <article class="honor reveal">
-          <div class="medal">📖</div>
-          <div class="body">
-            <h3>中华经典诵读 · 校级一等奖</h3>
-            <p>经典篇目诵读，校级一等奖。</p>
-          </div>
-          <span class="level">校级</span>
-        </article>
-      </div>
-      <p style="margin-top:20px">
-        <a class="btn" href="index0101.html">查看荣誉详情 →</a>
-      </p>
-    </section>
-  </main>
-
-  <!-- 页脚 -->
-  <footer class="site-footer">
-    <div class="inner">
-      <span>© 2026 白名睿 · 西北大学新闻传播学院</span>
-      <span><a href="index.html">返回首页</a></span>
+<main class="wrap">
+  <section class="page-head">
+    <p class="kicker">ARCHIVE · 全部文章</p>
+    <h1>归档</h1>
+    <p>按时间倒序收录全部 6 篇文章。点分类按钮可以只看某一类，标签在首页侧栏，点一下就能筛。</p>
+  </section>
+  <section class="section-block">
+    <div class="filter-bar" id="catFilter"><button class="on" data-filter-cat="">全部</button><button data-filter-cat="课程笔记">课程笔记</button><button data-filter-cat="作品手记">作品手记</button><button data-filter-cat="校园现场">校园现场</button><button data-filter-cat="生活随笔">生活随笔</button></div>
+<section class="archive-group"><h2>2026 年 11 月</h2><div class="archive-item" data-cat="课程笔记"><span class="d">11.16</span><a class="t" href="index0106.html">用 Three.js 做一个会转的首页</a><span class="c">课程笔记</span></div><div class="archive-item" data-cat="作品手记"><span class="d">11.15</span><a class="t" href="index0105.html">红黑白三色：一次悬疑演示的设计笔记</a><span class="c">作品手记</span></div><div class="archive-item" data-cat="作品手记"><span class="d">11.12</span><a class="t" href="index0104.html">第一次让 AI 帮我做完一条视频</a><span class="c">作品手记</span></div><div class="archive-item" data-cat="生活随笔"><span class="d">11.08</span><a class="t" href="index0103.html">综合测评整理手记：把一年拆成几张表</a><span class="c">生活随笔</span></div></section><section class="archive-group"><h2>2026 年 10 月</h2><div class="archive-item" data-cat="课程笔记"><span class="d">10.22</span><a class="t" href="index0102.html">把《共产党宣言》讲成三分钟</a><span class="c">课程笔记</span></div></section><section class="archive-group"><h2>2026 年 9 月</h2><div class="archive-item" data-cat="校园现场"><span class="d">09.14</span><a class="t" href="index0101.html">推普周那天，我在现场写了一篇校园新闻</a><span class="c">校园现场</span></div></section>    <div class="widget" id="tags" style="margin-top:44px;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:24px">
+      <h2 style="font-family:var(--serif);font-size:18px;letter-spacing:.12em;margin-bottom:14px">全部标签</h2>
+      <div class="tag-cloud"><a class="tag" href="index.html?tag=Three.js"># Three.js</a><a class="tag" href="index.html?tag=3D"># 3D</a><a class="tag" href="index.html?tag=前端"># 前端</a><a class="tag" href="index.html?tag=作业2"># 作业2</a><a class="tag" href="index.html?tag=视觉设计"># 视觉设计</a><a class="tag" href="index.html?tag=PPT"># PPT</a><a class="tag" href="index.html?tag=喜鹊谋杀案"># 喜鹊谋杀案</a><a class="tag" href="index.html?tag=作业4"># 作业4</a><a class="tag" href="index.html?tag=红楼梦"># 红楼梦</a><a class="tag" href="index.html?tag=剪映"># 剪映</a><a class="tag" href="index.html?tag=AI 工作流"># AI 工作流</a><a class="tag" href="index.html?tag=作业1"># 作业1</a><a class="tag" href="index.html?tag=综合测评"># 综合测评</a><a class="tag" href="index.html?tag=组织部"># 组织部</a><a class="tag" href="index.html?tag=归档"># 归档</a><a class="tag" href="index.html?tag=共产党宣言"># 共产党宣言</a><a class="tag" href="index.html?tag=课堂分享"># 课堂分享</a><a class="tag" href="index.html?tag=写作"># 写作</a><a class="tag" href="index.html?tag=推普周"># 推普周</a><a class="tag" href="index.html?tag=新闻写作"># 新闻写作</a><a class="tag" href="index.html?tag=志愿服务"># 志愿服务</a></div>
     </div>
-  </footer>
+  </section>
+</main>
 
-  <script src="scripts/main.js"></script>
+<footer class="site-footer">
+  <div class="inner">
+    <span>© 2026 白名睿 · 西北大学新闻传播学院 · 见字如面</span>
+    <span><a href="index01.html">文章归档</a> &nbsp;/&nbsp; <a href="feed.xml">RSS 订阅</a> &nbsp;/&nbsp; <a href="https://bai1971.github.io/assignment2/" target="_blank" rel="noopener">3D 版首页</a></span>
+  </div>
+</footer>
+<script src="scripts/main.js"></script>
+
 </body>
 </html>

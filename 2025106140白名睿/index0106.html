@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<!-- ============================================================
+     index0106.html —— 《新媒体交互设计》第 3 次作业：传统方式个人博客
+     作者：白名睿（2025106140）西北大学新闻传播学院
+     结构：header 导航 → main 主体 → footer 页脚（语义化标签）
+     ============================================================ -->
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="没有模型、没有人物，只有六个漂浮的几何体、一圈发光轨道和随板块切换的四种颜色。记录一下这个 3D 首页是怎么搭起来的，以及我为什么最后决定不放人像。">
+  <meta name="author" content="白名睿">
+  <meta property="og:title" content="用 Three.js 做一个会转的首页">
+  <meta property="og:description" content="没有模型、没有人物，只有六个漂浮的几何体、一圈发光轨道和随板块切换的四种颜色。记录一下这个 3D 首页是怎么搭起来的，以及我为什么最后决定不放人像。">
+  <meta property="og:type" content="website">
+  <title>用 Three.js 做一个会转的首页 · 见字如面</title>
+  <link rel="stylesheet" href="styles/layout.css">
+  <link rel="icon" type="image/png" href="images/logo.png">
+  <link rel="alternate" type="application/rss+xml" title="见字如面 RSS" href="feed.xml">
+  <meta property="og:image" content="https://bai1971.github.io/assignment3/2025106140%E7%99%BD%E5%90%8D%E7%9D%BF/images/cover-06.jpg">
+</head>
+<body data-nav="home">
+<header class="site-header">
+  <div class="bar">
+    <a class="brand" href="index.html">
+      <span class="seal">白</span>
+      <span class="txt"><b>见字如面</b><small>BAI MINGRUI · JOURNAL</small></span>
+    </a>
+    <nav class="site-nav" aria-label="站内导航">
+      <a data-nav="home" href="index.html">首页</a>
+      <a data-nav="archive" href="index01.html">归档</a>
+      <a data-nav="tags" href="index01.html#tags">标签</a>
+      <a data-nav="about" href="index02.html">关于</a>
+    </nav>
+    <div class="header-tools">
+      <button class="icon-btn" id="themeToggle" type="button" aria-label="切换深色模式">&#9790;</button>
+    </div>
+  </div>
+</header>
+
+<div id="progress"></div>
+<main class="wrap">
+  <nav class="breadcrumb" aria-label="面包屑导航">
+    <a href="index.html">首页</a> / <a href="index01.html?cat=课程笔记">课程笔记</a> / 正文
+  </nav>
+  <article>
+    <header class="post-head">
+      <p class="kicker">NO. 06 · 课程笔记</p>
+      <h1>用 Three.js 做一个会转的首页</h1>
+      <p class="deck">第 2 次作业做完之后，我删掉了原本想放的人物立牌。最后留在屏幕中央的，是一组会自转的几何体。</p>
+      <div class="meta-line">
+        <span>2026 年 11 月 16 日</span><span>约 6 分钟</span><span>白名睿</span>
+      </div>
+    </header>
+    <figure class="cover-hero"><img src="images/cover-06.jpg" alt="用 Three.js 做一个会转的首页 封面图"></figure>
+    <div class="prose">
+
+        <p>第 2 次作业的题目是「3D 交互个人主页」。我一开始想得特别具体：做一个人物立牌放在中间，最好还能换成游戏角色的 3D 形象。真动手之后才发现，这个方向既费时间，也不是我想要的——一个跟我本人不太像的虚拟人杵在首页，怎么看都有点别扭。</p>
+        <p>于是推倒重来，把「人」拿掉，让几何体自己说话。</p>
+
+        <h2>先把场景搭起来</h2>
+        <p>没有用前端框架，只引了一份放在本地的 <code>three.min.js</code>，一个 <code>canvas</code> 铺满整屏。相机摆在 <code>(0, 1.2, 9)</code>，一盏主光加一盏轮廓光，剩下的就是往场景里放东西：二十面体、圆环、八面体、环面纽结、立方体、圆柱，六个几何体散在四周，各自慢慢自转、上下浮动。</p>
+        <p>中间留了一个展示台：扁圆柱当底座，一圈发光的圆环，上方悬着多面体核心、线框护壳和两道交错的轨道。整个雕塑会自转、会浮沉，鼠标按住画布拖动，还能把它转一整圈。背景再撒 500 个白色粒子当星尘，亮度跟着时间轻微呼吸。</p>
+
+        <h2>四个板块，四种颜色</h2>
+        <p>页面左下角是信息区，用左右箭头或者键盘方向键切换：关于我、荣誉与经历、作品集、工具箱。每切一次，变的并不只是文字——画布里所有材质、线框、灯光和背景底色，都会一起过渡到新的主色：橙、红、青、黄。</p>
+        <blockquote>「切换一个板块，等于换一整个房间的灯光。」</blockquote>
+        <p>实现上其实不复杂：所有需要变色的材质在创建时统一收进一个数组，切换时把新的颜色一次性写进去，CSS 那边再让背景做 0.65 秒的缓动过渡，视觉上就联动起来了。</p>
+
+        <h2>做完之后的一点体会</h2>
+        <ul>
+          <li><strong>交互不一定要复杂。</strong>拖拽旋转 + 箭头切换 + 键盘方向键，三件事就够撑起一个页面。</li>
+          <li><strong>3D 最容易翻车的是「太暗」。</strong>给核心材质加了自发光，才把雕塑从背景里拉出来。</li>
+          <li><strong>留白比堆东西重要。</strong>拿掉人物之后，画面反而松了，信息区也更清楚。</li>
+        </ul>
+        <p>顺手把这套配色和「不要人物立牌」的决定也带到了第 3 次作业里：那边是纸感浅色的传统博客，这边是会转的 3D 入口，两个站讲同一批内容，气质不一样。</p>
+            </div>
+    <footer class="post-foot">
+      <div class="tags"><a class="tag" href="index.html?tag=Three.js"># Three.js</a><a class="tag" href="index.html?tag=3D"># 3D</a><a class="tag" href="index.html?tag=前端"># 前端</a><a class="tag" href="index.html?tag=作业2"># 作业2</a></div>
+      <a href="index.html">← 返回文章列表</a>
+    </footer>
+  </article>
+  <nav class="post-nav" aria-label="文章翻页">
+    <a href="index.html"><small>← 回到列表</small>全部文章</a>
+    <a class="next" href="index0105.html"><small>下一篇 →</small>红黑白三色：一次悬疑演示的设计笔记</a>
+  </nav>
+</main>
+
+<footer class="site-footer">
+  <div class="inner">
+    <span>© 2026 白名睿 · 西北大学新闻传播学院 · 见字如面</span>
+    <span><a href="index01.html">文章归档</a> &nbsp;/&nbsp; <a href="feed.xml">RSS 订阅</a> &nbsp;/&nbsp; <a href="https://bai1971.github.io/assignment2/" target="_blank" rel="noopener">3D 版首页</a></span>
+  </div>
+</footer>
+<script src="scripts/main.js"></script>
+
+</body>
+</html>

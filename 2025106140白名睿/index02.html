@@ -1,95 +1,102 @@
 <!DOCTYPE html>
 <!-- ============================================================
-     index02.html —— 一级页面：作品集
-     结构：header → main（三次课程作业 + 其他作品）→ footer
+     index02.html —— 《新媒体交互设计》第 3 次作业：传统方式个人博客
+     作者：白名睿（2025106140）西北大学新闻传播学院
+     结构：header 导航 → main 主体 → footer 页脚（语义化标签）
      ============================================================ -->
 <html lang="zh-CN">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>作品 · 白名睿</title>
+  <meta name="description" content="关于白名睿与「见字如面」这个博客。">
+  <meta name="author" content="白名睿">
+  <meta property="og:title" content="关于">
+  <meta property="og:description" content="关于白名睿与「见字如面」这个博客。">
+  <meta property="og:type" content="website">
+  <title>关于 · 见字如面</title>
   <link rel="stylesheet" href="styles/layout.css">
-  <link rel="icon" type="image/png" href="images/logo.png"> <!-- 站点图标（名章 logo） -->
+  <link rel="icon" type="image/png" href="images/logo.png">
+  <link rel="alternate" type="application/rss+xml" title="见字如面 RSS" href="feed.xml">
+  
 </head>
-<body>
-
-  <!-- 顶部导航 -->
-  <header class="site-header">
-    <div class="bar">
-      <div class="logo"><span class="seal">白</span><span>白名睿 · BAI MINGRUI</span></div>
-      <nav class="site-nav" aria-label="站内导航">
-        <a href="index.html">首页</a>
-        <a href="index01.html">简历</a>
-        <a href="index02.html">作品</a>
-      </nav>
+<body data-nav="about">
+<header class="site-header">
+  <div class="bar">
+    <a class="brand" href="index.html">
+      <span class="seal">白</span>
+      <span class="txt"><b>见字如面</b><small>BAI MINGRUI · JOURNAL</small></span>
+    </a>
+    <nav class="site-nav" aria-label="站内导航">
+      <a data-nav="home" href="index.html">首页</a>
+      <a data-nav="archive" href="index01.html">归档</a>
+      <a data-nav="tags" href="index01.html#tags">标签</a>
+      <a data-nav="about" href="index02.html">关于</a>
+    </nav>
+    <div class="header-tools">
+      <button class="icon-btn" id="themeToggle" type="button" aria-label="切换深色模式">&#9790;</button>
     </div>
-  </header>
+  </div>
+</header>
 
-  <main>
-    <section class="section">
-      <div class="section-head">
-        <span class="no">01</span>
-        <h2>课程作业</h2>
-        <span class="rule"></span>
-      </div>
-      <div class="cards">
-        <article class="card reveal">
-          <h3>第 1 次 · 名著讲解视频</h3>
-          <p>《红楼梦》讲解短视频：用 AI 技能包完成选题、脚本、剪辑与成片的全流程。</p>
-          <a class="meta" href="https://bai1971.github.io/classic-novel-video/" target="_blank" rel="noopener">bai1971.github.io/classic-novel-video →</a>
-        </article>
-        <article class="card reveal">
-          <h3>第 2 次 · 3D 交互个人主页</h3>
-          <p>Three.js 3D 展厅式主页：中央几何雕塑 + 可拖拽旋转的漂浮几何体与粒子星尘，配色随板块联动。</p>
-          <a class="meta" href="https://bai1971.github.io/assignment2/" target="_blank" rel="noopener">bai1971.github.io/assignment2 →</a>
-        </article>
-        <article class="card reveal">
-          <h3>第 3 次 · 传统方式个人主页</h3>
-          <p>就是你现在看的这一站：语义化 HTML + 手写 CSS，从草稿到上线，不借助框架。</p>
-          <a class="meta" href="index.html">回到首页看看 →</a>
-        </article>
-        <article class="card reveal">
-          <h3>第 4 次 · 《无人生还》主题演示</h3>
-          <p>以《喜鹊谋杀案》美学制作的悬疑主题幻灯片：红黑白三色、剪影、平滑转场，HTML / PPTX / PDF 三件套。</p>
-          <a class="meta" href="https://bai1971.github.io/assignment4/" target="_blank" rel="noopener">bai1971.github.io/assignment4 →</a>
-        </article>
-      </div>
-    </section>
+<main class="wrap">
+  <section class="page-head">
+    <p class="kicker">ABOUT · 关于</p>
+    <h1>关于我和这个博客</h1>
+    <p>一个新闻传播学院学生的自留地。写课程里学到的、现场看到的、还有做完之后才想明白的。</p>
+  </section>
+  <div class="about-grid">
+    <div>
+      <article class="prose" style="padding-top:0;max-width:none">
+        <h2 style="margin-top:0">为什么开这个博客</h2>
+        <p>一开始是为了交作业：第 3 次作业要求用传统方式做一个个人主页。但我不太想做成一份挂在网上的简历——奖项列一排、技能条拉满，看完什么也留不下。</p>
+        <p>所以改成了博客。文章流、分类、标签、归档、关于，加上一个能切换的暗色模式。内容全部是真事：推普周现场写的新闻稿、被压缩到三分钟的《共产党宣言》分享稿、整理了一整年的综合测评材料、用 AI 做完的第一条视频、红黑白三色的悬疑演示，还有那个把人物立牌删掉之后才顺眼的 3D 首页。</p>
+        <blockquote>「比起被看见，我更在意有没有把事情说清楚。」</blockquote>
+        <p>技术上没有用任何框架：语义化 HTML、手写 CSS、原生 JS，加上一个 RSS 和站点地图。文章封面也是自己用脚本画的，纸感底色配印章红，跟整站一个调子。</p>
 
-    <section class="section">
-      <div class="section-head">
-        <span class="no">02</span>
-        <h2>课堂之外</h2>
-        <span class="rule"></span>
-      </div>
-      <div class="cards">
-        <article class="card reveal">
-          <h3>大广赛参赛作品 ×2</h3>
-          <p>全国大学生广告艺术大赛省级二等奖两组，覆盖策划与视频类目。</p>
-          <span class="meta">省级二等奖</span>
-        </article>
-        <article class="card reveal">
-          <h3>校园新闻写作</h3>
-          <p>「推普周」主题校园新闻练笔，从采访到成稿的完整消息训练。</p>
-          <span class="meta">课程实践</span>
-        </article>
-        <article class="card reveal">
-          <h3>摄影记录</h3>
-          <p>参与校园摄影活动，用镜头积累校园现场的素材库。</p>
-          <span class="meta">持续更新</span>
-        </article>
-      </div>
-    </section>
-  </main>
+        <h2>教育与经历</h2>
+        <div class="timeline">
+          <div class="item reveal"><p class="when">2025.09 — 至今</p><h3>西北大学 · 新闻传播学院</h3><p>本科在读，学号 2025106140，长安校区。主修新闻传播类课程，课余做校园媒体实践与新媒体创作。</p></div>
+          <div class="item reveal"><p class="when">2025.10 — 至今</p><h3>院团委组织部 · 干事</h3><p>参与学院共青团组织工作，负责活动会务、材料整理与评奖评优协助，任职满一年。</p></div>
+          <div class="item reveal"><p class="when">2026 暑期</p><h3>「三下乡」社会实践</h3><p>随队开展暑期社会实践，参与调研记录与宣传推送。</p></div>
+          <div class="item reveal"><p class="when">2026.09 / 11</p><h3>推普周 · 志愿服务 / 校园新闻练笔</h3><p>现场引导与活动记录，并把现场写成了一篇校园消息。</p></div>
+        </div>
 
-  <!-- 页脚 -->
-  <footer class="site-footer">
-    <div class="inner">
-      <span>© 2026 白名睿 · 西北大学新闻传播学院</span>
-      <span><a href="index01.html">看看简历 →</a></span>
+        <h2>工具箱</h2>
+        <div class="skills">
+          <div class="skill reveal"><div class="name"><span>视频剪辑 / AI 工具链</span><span>85%</span></div><div class="bar"><i style="--pct:85%"></i></div></div>
+          <div class="skill reveal"><div class="name"><span>演示与视觉设计</span><span>80%</span></div><div class="bar"><i style="--pct:80%"></i></div></div>
+          <div class="skill reveal"><div class="name"><span>新闻写作与文案</span><span>82%</span></div><div class="bar"><i style="--pct:82%"></i></div></div>
+          <div class="skill reveal"><div class="name"><span>摄影</span><span>70%</span></div><div class="bar"><i style="--pct:70%"></i></div></div>
+          <div class="skill reveal"><div class="name"><span>HTML / CSS（在进阶中）</span><span>60%</span></div><div class="bar"><i style="--pct:60%"></i></div></div>
+        </div>
+        <p style="margin-top:30px"><a class="btn solid" href="index.html">← 回去读文章</a> <a class="btn" href="index01.html">看归档</a></p>
+      </article>
     </div>
-  </footer>
+    <aside>
+      <div class="about-card">
+        <div class="vname">白名睿</div><br>
+        <span class="stamp">白名睿印</span>
+        <p>西北大学 · 新闻传播学院<br>2025 级本科生 · 长安校区</p>
+      </div>
+      <div class="widget" style="margin-top:22px">
+        <h2>别处也能找到我</h2>
+        <div class="line-list">
+          <a href="https://bai1971.github.io/assignment2/" target="_blank" rel="noopener"><span>3D 交互版首页</span><span>作业 2</span></a>
+          <a href="https://bai1971.github.io/assignment4/" target="_blank" rel="noopener"><span>悬疑主题演示</span><span>作业 4</span></a>
+          <a href="feed.xml"><span>RSS 订阅</span><span>XML</span></a>
+        </div>
+      </div>
+    </aside>
+  </div>
+</main>
 
-  <script src="scripts/main.js"></script>
+<footer class="site-footer">
+  <div class="inner">
+    <span>© 2026 白名睿 · 西北大学新闻传播学院 · 见字如面</span>
+    <span><a href="index01.html">文章归档</a> &nbsp;/&nbsp; <a href="feed.xml">RSS 订阅</a> &nbsp;/&nbsp; <a href="https://bai1971.github.io/assignment2/" target="_blank" rel="noopener">3D 版首页</a></span>
+  </div>
+</footer>
+<script src="scripts/main.js"></script>
+
 </body>
 </html>

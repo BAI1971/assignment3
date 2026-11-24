@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<!-- ============================================================
+     index0104.html —— 《新媒体交互设计》第 3 次作业：传统方式个人博客
+     作者：白名睿（2025106140）西北大学新闻传播学院
+     结构：header 导航 → main 主体 → footer 页脚（语义化标签）
+     ============================================================ -->
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="装技能包、写「百万剪辑师」提示词、生成草稿、导出成片。中间遇到仓库失效、路径报错、导出分支没写完，逐个啃下来。">
+  <meta name="author" content="白名睿">
+  <meta property="og:title" content="第一次让 AI 帮我做完一条视频">
+  <meta property="og:description" content="装技能包、写「百万剪辑师」提示词、生成草稿、导出成片。中间遇到仓库失效、路径报错、导出分支没写完，逐个啃下来。">
+  <meta property="og:type" content="website">
+  <title>第一次让 AI 帮我做完一条视频 · 见字如面</title>
+  <link rel="stylesheet" href="styles/layout.css">
+  <link rel="icon" type="image/png" href="images/logo.png">
+  <link rel="alternate" type="application/rss+xml" title="见字如面 RSS" href="feed.xml">
+  <meta property="og:image" content="https://bai1971.github.io/assignment3/2025106140%E7%99%BD%E5%90%8D%E7%9D%BF/images/cover-04.jpg">
+</head>
+<body data-nav="home">
+<header class="site-header">
+  <div class="bar">
+    <a class="brand" href="index.html">
+      <span class="seal">白</span>
+      <span class="txt"><b>见字如面</b><small>BAI MINGRUI · JOURNAL</small></span>
+    </a>
+    <nav class="site-nav" aria-label="站内导航">
+      <a data-nav="home" href="index.html">首页</a>
+      <a data-nav="archive" href="index01.html">归档</a>
+      <a data-nav="tags" href="index01.html#tags">标签</a>
+      <a data-nav="about" href="index02.html">关于</a>
+    </nav>
+    <div class="header-tools">
+      <button class="icon-btn" id="themeToggle" type="button" aria-label="切换深色模式">&#9790;</button>
+    </div>
+  </div>
+</header>
+
+<div id="progress"></div>
+<main class="wrap">
+  <nav class="breadcrumb" aria-label="面包屑导航">
+    <a href="index.html">首页</a> / <a href="index01.html?cat=作品手记">作品手记</a> / 正文
+  </nav>
+  <article>
+    <header class="post-head">
+      <p class="kicker">NO. 04 · 作品手记</p>
+      <h1>第一次让 AI 帮我做完一条视频</h1>
+      <p class="deck">第 1 次作业是名著讲解视频。从文案到成片，我第一次把整条流程交给工具链跑了一遍。</p>
+      <div class="meta-line">
+        <span>2026 年 11 月 12 日</span><span>约 7 分钟</span><span>白名睿</span>
+      </div>
+    </header>
+    <figure class="cover-hero"><img src="images/cover-04.jpg" alt="第一次让 AI 帮我做完一条视频 封面图"></figure>
+    <div class="prose">
+
+        <p>第 1 次作业要做一条名著讲解短视频，我选了《红楼梦》。老师在群里给了课件、一份 AI 做 PPT 的实操指南，还有一份「百万剪辑师」的剪映提示词，要求我们把素材交给工具链，做出一份能直接打开的剪映草稿。</p>
+
+        <h2>先装工具，再谈创作</h2>
+        <p>第一步是安装剪映技能包。原来的仓库链接已经打不开了，找了一圈改用社区里还在维护的 fork，装到本地技能目录。装完先跑诊断脚本，结果在 Windows 上直接报错：导出函数里有个空的分支没有处理。把那段补上，再跑一次，草稿目录终于定位到了。</p>
+        <p>这一段的体会很直接：<strong>工具链没跑通之前，写再好的文案都没用。</strong>所以我把顺序整个倒过来——先验证能生成草稿、能导出成片，再开始写内容。</p>
+
+        <h2>「百万剪辑师」提示词怎么用</h2>
+        <p>这段提示词本质上是把剪辑决策拆成可描述的动作：节奏怎么起、画面怎么接、字幕什么时候出、重点停多久。我按《红楼梦》的讲解稿把提示词改写了一遍，让它跟着文案的段落走，而不是套一个通用模板。</p>
+        <blockquote>「提示词不是咒语，是把你的剪辑意图说清楚。」</blockquote>
+        <p>改完之后，草稿里的分镜顺序明显顺了：开场先给一个人物关系，中段放原文片段，结尾回到一句能记住的话。字幕统一压在下方安全区，重点处多留半秒。</p>
+
+        <h2>踩过的坑，记下来</h2>
+        <ul>
+          <li>中文文件名在 Windows 解压时容易乱码，最后改用 Python 的 tarfile 直接解；</li>
+          <li>技能里写的是相对路径，换目录执行就取不到正文，统一改成本机绝对路径；</li>
+          <li>草稿生成成功不等于成片成功，一定要单独验证导出环节。</li>
+        </ul>
+        <p>成片交上去之后，我反而记住的不是视频本身，而是这条流程：先让工具跑通，再让内容说话。后面做 PPT、做网页，我都是按这个顺序来的。</p>
+            </div>
+    <footer class="post-foot">
+      <div class="tags"><a class="tag" href="index.html?tag=红楼梦"># 红楼梦</a><a class="tag" href="index.html?tag=剪映"># 剪映</a><a class="tag" href="index.html?tag=AI 工作流"># AI 工作流</a><a class="tag" href="index.html?tag=作业1"># 作业1</a></div>
+      <a href="index.html">← 返回文章列表</a>
+    </footer>
+  </article>
+  <nav class="post-nav" aria-label="文章翻页">
+    <a href="index0105.html"><small>← 上一篇</small>红黑白三色：一次悬疑演示的设计笔记</a>
+    <a class="next" href="index0103.html"><small>下一篇 →</small>综合测评整理手记：把一年拆成几张表</a>
+  </nav>
+</main>
+
+<footer class="site-footer">
+  <div class="inner">
+    <span>© 2026 白名睿 · 西北大学新闻传播学院 · 见字如面</span>
+    <span><a href="index01.html">文章归档</a> &nbsp;/&nbsp; <a href="feed.xml">RSS 订阅</a> &nbsp;/&nbsp; <a href="https://bai1971.github.io/assignment2/" target="_blank" rel="noopener">3D 版首页</a></span>
+  </div>
+</footer>
+<script src="scripts/main.js"></script>
+
+</body>
+</html>
